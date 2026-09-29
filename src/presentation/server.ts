@@ -17,8 +17,6 @@ export class Server {
             const url = 'http://localhost:3000/comments';
             new CheckService(
                 fileSystemRepository,
-                () => console.log('Success'),
-                (error) => console.log(`${url} has an error ${error} `),
             ).execute(url);
 
         });
