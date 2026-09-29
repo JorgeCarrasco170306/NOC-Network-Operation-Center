@@ -16,9 +16,7 @@ export class FileSystemDatasource extends LogDatasource {
     }
 
     private createLogsFiles = () => {
-        if (fs.existsSync(this.logPath)) return;
-
-        fs.mkdirSync(this.logPath);
+        if (!fs.existsSync(this.logPath)) fs.mkdirSync(this.logPath);
 
         [
             this.allLogsPath,
@@ -61,6 +59,7 @@ export class FileSystemDatasource extends LogDatasource {
         const content = fs.readFileSync(path, 'utf-8');
         const logs = content
             .split('\n')
+            .filter(Boolean)
             .map(LogEntity.fromJson);
 
         return logs;

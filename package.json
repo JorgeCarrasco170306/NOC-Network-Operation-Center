@@ -7,7 +7,7 @@
     "dev": "tsx watch src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +15,14 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.6.3",
+    "@types/nodemailer": "^8.0.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "dependencies": {
     "cron": "^4.4.0",
-    "dotenv": "^18.0.4"
+    "dotenv": "^18.0.4",
+    "env-var": "^7.5.0",
+    "nodemailer": "^10.0.12"
   }
 }

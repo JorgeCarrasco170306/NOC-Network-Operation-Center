@@ -5,5 +5,5 @@ import 'dotenv/config';
 
 async function main() {
     // console.log(process.env['PORT']);
-    Server.start();
+    await Server.start();
 }
